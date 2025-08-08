@@ -1,0 +1,98 @@
+🎯 GOAL:
+Build a modular Flask backend for deepfake detection (starting with video), where:
+
+The main app connects to the frontend and receives a video file.
+
+It dispatches the video to a video processor module.
+
+The video processor runs multiple deepfake detection models in parallel threads:
+
+RPPG (remote photoplethysmography)
+
+Lip Sync
+
+Face Feature Consistency
+
+Each model returns:
+
+label: "real" or "fake"
+
+confidence: float
+
+reason: textual explanation
+
+The aggregated output is sent back to the frontend.
+
+📁 Folder Structure:
+
+php
+Copy code
+deepfake_backend/
+│
+├── app.py                        # Flask entry point
+├── config.py                     # Configurations
+│
+├── controllers/
+│   ├── video_controller.py       # Handles /api/video POST requests
+│   ├── image_controller.py       # (To be done later)
+│   ├── audio_controller.py       # (To be done later)
+│   └── text_controller.py        # (To be done later)
+│
+├── processors/
+│   └── video/
+│       ├── video_processor.py    # Main function to run threads for each model
+│       ├── rppg_model.py         # RPPG model logic
+│       ├── lipsync_model.py      # Lip Sync model logic
+│       └── face_features_model.py# Face feature analysis logic
+│
+├── utils/
+│   ├── threading_utils.py        # (Optional) Utility to abstract threading
+│   └── video_utils.py            # Frame extraction, resizing, etc.
+│
+├── static/                       # Video upload directory
+├── requirements.txt              # Python dependencies
+└── plan.txt                      # This plan
+🔁 Workflow (Current Phase - Video Only):
+
+Frontend sends video via /api/video POST request.
+
+video_controller.py receives it and saves the file.
+
+Calls video_processor.process_video(video_path)
+
+Inside video_processor.py, spawns 3 threads:
+
+Calls rppg_model.rppg_process()
+
+Calls lipsync_model.lipsync_process()
+
+Calls face_features_model.face_features_process()
+
+Waits for threads to complete.
+
+Aggregates results into a single JSON and returns to frontend.
+
+🛠 Each model returns:
+
+json
+Copy code
+{
+  "label": "fake",
+  "confidence": 0.92,
+  "reason": "Heart rate inconsistent across frames"
+}
+📅 FUTURE PLANS (After Video Works):
+
+Add support for:
+
+/api/image
+
+/api/audio
+
+/api/text
+
+Implement multimodal fusion logic for final decision.
+
+Add logging, error handling, and caching.
+
+Let me know when you're ready to start building and I’ll help scaffold the code.
