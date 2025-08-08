@@ -1,0 +1,23 @@
+# Ignore Python cache and compiled files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment folders
+env/
+venv/
+ENV/
+
+# Ignore .env file
+.env
+**/.env
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Jupyter/IPython checkpoints
+.ipynb_checkpoints/
+
+# VS Code settings
+.vscode/

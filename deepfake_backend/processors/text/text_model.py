@@ -2,13 +2,19 @@ import re
 import torch
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM, AutoModelForSequenceClassification, pipeline
 from googleapiclient.discovery import build
+import os
+from dotenv import load_dotenv
+from pathlib import Path
 
 # ======================
 # CONFIGURATION
 # ======================
-HF_TOKEN = "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"  # Replace with your token
-GOOGLE_API_KEY = "AIzaSyCFwixres0z5iOMbK6UIk8UGd1JqBue0Y0"
-SEARCH_ENGINE_ID = "e4b06c823686c4cc8"
+dotenv_path = Path(__file__).resolve().parents[2] / ".env"
+load_dotenv(dotenv_path)
+
+HF_TOKEN = os.getenv("HF_TOKEN")
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+SEARCH_ENGINE_ID = os.getenv("SEARCH_ENGINE_ID")
 
 # ======================
 # LOAD MODELS
