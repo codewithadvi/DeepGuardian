@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>DeepGuardian</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="icons/icon48.png" alt="DeepGuardian" class="logo">
+      <h1>DeepGuardian</h1>
+      <p class="tagline">AI-powered verification for deepfakes and synthetic media</p>
+    </div>
+    
+    <div class="tabs">
+      <button class="tab active" data-tab="analyze">Analyze</button>
+      <button class="tab" data-tab="history">History</button>
+      <button class="tab" data-tab="settings">Settings</button>
+    </div>
+    
+    <div class="tab-content active" id="analyze-tab">
+      <div class="analyze-options">
+        <button class="btn primary" id="analyze-page">
+          <i class="fas fa-microscope"></i> Analyze Current Page
+        </button>
+        <button class="btn" id="analyze-image">
+          <i class="fas fa-image"></i> Analyze Image
+        </button>
+        <button class="btn" id="analyze-video">
+          <i class="fas fa-video"></i> Analyze Video
+        </button>
+        <button class="btn" id="analyze-audio">
+          <i class="fas fa-microphone"></i> Analyze Audio
+        </button>
+      </div>
+      
+      <div class="status" id="status">
+        <i class="fas fa-info-circle"></i> Click a button to analyze media
+      </div>
+      
+      <div class="results" id="results" style="display: none;">
+        <h2>Analysis Results</h2>
+        <div id="results-content"></div>
+      </div>
+    </div>
+    
+    <div class="tab-content" id="history-tab" style="display: none;">
+      <h2>Recent Analysis</h2>
+      <div id="history-content">
+        <p class="empty">No analysis history yet</p>
+      </div>
+      <button class="btn" id="clear-history">
+        <i class="fas fa-trash"></i> Clear History
+      </button>
+    </div>
+    
+    <div class="tab-content" id="settings-tab" style="display: none;">
+      <h2>Settings</h2>
+      <div class="setting">
+        <label>
+          <input type="checkbox" id="auto-scan" checked>
+          Automatically scan media on pages
+        </label>
+      </div>
+      <div class="setting">
+        <label>
+          <input type="checkbox" id="show-indicators" checked>
+          Show verification indicators
+        </label>
+      </div>
+      <div class="setting">
+        <label>
+          Confidence threshold for warnings:
+          <input type="range" id="confidence-threshold" min="30" max="70" value="50">
+          <span id="threshold-value">50%</span>
+        </label>
+      </div>
+      <div class="setting">
+        <label>
+          API Server:
+          <input type="text" id="api-server" value="http://127.0.0.1:5001">
+        </label>
+      </div>
+      <button class="btn primary" id="save-settings">
+        <i class="fas fa-save"></i> Save Settings
+      </button>
+    </div>
+  </div>
+
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
