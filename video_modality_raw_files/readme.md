@@ -96,6 +96,11 @@ PhysNet3D is a **3D Convolutional Neural Network** based on an encoder-decoder a
 - **Real Video**: Produces a clean, rhythmic signal. Peak detection or Fourier analysis reveals a strong heartbeat frequency.
 - **Deepfake Video**: Signal is flat, erratic, or has unnatural frequency spikes — exposing the synthetic origin.
 
+<img width="878" height="344" alt="image" src="https://github.com/user-attachments/assets/6eddb89d-2025-4d5f-b307-5192cba5ac67" />
+
+<img width="817" height="322" alt="image" src="https://github.com/user-attachments/assets/c4470059-32a8-4bdf-b03d-f8e01aa31a10" />
+
+
 This makes rPPG-based detection highly resistant to visual trickery, as it goes **beyond what deepfake generators are currently able to synthesize**.
 
 ---
