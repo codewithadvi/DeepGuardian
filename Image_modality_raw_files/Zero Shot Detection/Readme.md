@@ -149,6 +149,12 @@ The model demonstrates excellent performance on a held-out test set:
 | **Precision** | 0.87 |
 | **Recall** | 0.85 |
 
+<img width="450" height="406" alt="image" src="https://github.com/user-attachments/assets/1f86ba9c-007b-4c87-8703-0599eec5962c" />
+
+![Uploading image.png…]()
+
+
+
 ### 💡 Explainable AI (XAI): Building Trust via Transparency
 
 A simple "real" or "fake" verdict is not enough. To build trust, our Custom CNN provides clear, visual explanations for its decisions. This answers the crucial "why" and allows users to see the evidence for themselves.
