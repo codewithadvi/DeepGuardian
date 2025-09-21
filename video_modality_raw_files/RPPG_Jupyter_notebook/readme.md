@@ -46,8 +46,6 @@ PhysNet3D is a **3D Convolutional Neural Network** based on an encoder-decoder a
 
 6. **rPPG Signal Analysis**: This signal is plotted or processed to visualize the heartbeat pattern. Real human signals show periodic, smooth waves, while deepfakes often have flat or noisy signals with no rhythm.
 
-![Alt text for the image](Deepfake\RPPG_Jupyter_notebook\Readme_imgs\flowchart.png)
-
 ---
 
 ## 📊 Output Examples
