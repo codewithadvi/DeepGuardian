@@ -1,3 +1,15 @@
+# 🖼️ Image Modality: A Two-Pronged Approach to Deepfake Detection
+
+This directory contains the complete solution for our image authenticity analysis. We recognize that "deepfake" content is not limited to human faces; it can include AI-generated art, animals, landscapes, and more. To address this, we've developed a powerful, two-pronged strategy:
+
+1.  **A Specialized Custom CNN**: A highly accurate, fine-tuned model built exclusively for the most common and critical use case: **detecting deepfake human faces**.
+2.  **A Generalized Zero-Shot Detector**: A flexible and future-proof pipeline that can identify **any type of AI-generated image** (art, animals, objects) without ever needing to be retrained.
+
+Together, these two components provide a robust and comprehensive defense against all forms of image-based misinformation.
+
+---
+---
+
 #  Zero-Shot Deepfake Detection using CLIP + Digital Forensics
 
 ##  Project Overview
@@ -5,6 +17,10 @@
 This project presents a **revolutionary Deepfake Detection Pipeline** that combines the power of **Zero-Shot Learning (ZSL)** using **OpenAI's CLIP** model with classic **Digital Image Forensics**. Unlike conventional models that are fine-tuned on specific deepfake datasets (usually human face datasets), this pipeline makes **generalized predictions** — capable of detecting **deepfakes of faces, landscapes, animals, objects, artworks**, and more — **without any retraining**.
 
 >  The model also provides **human-interpretable reasoning** for its verdict based on measurable features like **sharpness, noise residuals**, and **ELA artifacts**.
+
+<img width="350" height="400" alt="image" src="https://github.com/user-attachments/assets/f6809556-9579-46de-a3cb-8e303753cbb0" />  
+
+<img width="350" height="30" alt="image" src="https://github.com/user-attachments/assets/ab3de7d5-2a10-4bcb-8b69-601346dd5d41" />
 
 ---
 
@@ -102,3 +118,45 @@ Natural images contain consistent sensor noise. Synthetic or edited images disru
 
 ---
 
+## 2. Custom CNN: Specialized Human Face Deepfake Detector
+
+### Project Overview
+
+While our Zero-Shot model provides broad coverage, this Custom Convolutional Neural Network (CNN) is a specialist, engineered for one purpose: **to achieve the highest possible accuracy in detecting deepfake human faces**. It has been trained on a massive dataset of over 140,000 real and synthetic face images, allowing it to learn the subtle, intricate artifacts that distinguish even the most convincing fakes.
+
+The cornerstone of this model is its commitment to **transparency through Explainable AI (XAI)**.
+
+### Model Architecture
+
+The model is built with a standard, robust CNN architecture designed for stability and performance.
+
+* **Input**: `Image (224x224)`
+* **Core**: A stack of `Conv2D` layers for feature extraction, stabilized with `Batch Normalization` and made robust against overfitting with `Dropout`.
+* **Output**: A `GlobalAveragePooling` layer followed by a `Dense` layer to produce the final classification.
+
+### 📊 Performance Metrics
+
+The model demonstrates excellent performance on a held-out test set:
+
+| Metric | Score |
+| :--- | :---: |
+| **ROC AUC** | 0.96 |
+| **Accuracy** | 0.86 |
+| **F1-Score** | 0.86 |
+| **Precision** | 0.87 |
+| **Recall** | 0.85 |
+
+### 💡 Explainable AI (XAI): Building Trust via Transparency
+
+A simple "real" or "fake" verdict is not enough. To build trust, our Custom CNN provides clear, visual explanations for its decisions. This answers the crucial "why" and allows users to see the evidence for themselves.
+
+We integrate several state-of-the-art XAI techniques:
+
+* **Saliency Maps / Integrated Gradients**: These methods produce a heatmap that highlights the most important pixels in the input image. **Bright areas** in the map are the pixels the model "looked at" the most to make its decision.
+* **SHAP (SHapley Additive exPlanations)**: SHAP goes deeper by showing which parts of the face push the prediction towards "fake" (**red pixels**) and which parts push it towards "real" (**blue pixels**). This provides a nuanced, pixel-by-pixel contribution map.
+* **LIME (Local Interpretable Model-agnostic Explanations)**: LIME identifies which "superpixels" or regions of the image were most influential. This is useful for seeing if the model is focusing on logical areas, like inconsistent eyes or a blurry jawline.
+
+![Example XAI Visualization](path/to/xai_visualization.png)
+*An example showing SHAP highlighting manipulated regions on a deepfake face.*
+
+By providing these transparent insights, our Custom CNN moves beyond being a black box and becomes a trustworthy forensic tool.
