@@ -4,6 +4,7 @@ TextGuard is a sophisticated, multi-stage pipeline designed to dissect and verif
 
 This system acts as an automated fact-checker, providing a crucial layer of defense against the rapid spread of online misinformation.
 
+<img width="1205" height="783" alt="image" src="https://github.com/user-attachments/assets/5ecc362e-3a3b-4c89-8a81-793d62daaff8" />
 
 
 ---
@@ -56,4 +57,5 @@ TextGuard processes information in a logical, step-by-step workflow to ensure ac
 ## 📜 License
 
 This project is licensed under the MIT License.
+
 
