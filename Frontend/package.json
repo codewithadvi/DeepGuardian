@@ -1,23 +1,19 @@
 {
-  "name": "finalwebpage",
+  "name": "deepguardian-website",
   "version": "1.0.0",
-  "description": "",
+  "description": "DeepGuardian Website",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "axios": "^1.11.0",
-    "body-parser": "^2.2.0",
+    "axios": "^1.7.2",
+    "body-parser": "^1.20.2",
     "cors": "^2.8.5",
-    "dotenv": "^17.2.1",
-    "express": "^5.1.0",
-    "form-data": "^4.0.4",
-    "mkdirp": "^3.0.1",
-    "multer": "^2.0.2"
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "form-data": "^4.0.0",
+    "multer": "^1.4.5-lts.1",
+    "mkdirp": "^1.0.4"
   }
 }
