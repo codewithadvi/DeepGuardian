@@ -1,4 +1,4 @@
-# ✍️ TextGuard: AI-Powered Misinformation & Fake News Detector
+# ✍️ AI-Powered Misinformation & Fake News Detector
 
 TextGuard is a sophisticated, multi-stage pipeline designed to dissect and verify text-based content in real-time. It goes beyond simple classification by actively extracting factual claims from an article and cross-referencing them against live web search results to deliver a transparent, evidence-based verdict.
 
@@ -56,3 +56,4 @@ TextGuard processes information in a logical, step-by-step workflow to ensure ac
 ## 📜 License
 
 This project is licensed under the MIT License.
+
