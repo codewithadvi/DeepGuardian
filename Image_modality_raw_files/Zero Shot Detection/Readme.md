@@ -113,7 +113,8 @@ Natural images contain consistent sensor noise. Synthetic or edited images disru
 
 ##  Example Visualization
 
-![Example ELA Output](path/to/ela_output.jpg)  
+<img width="1307" height="548" alt="image" src="https://github.com/user-attachments/assets/a09adab2-1f72-4683-9319-0b774792db11" />
+
 *A deepfake detected through noise inconsistency and low blur score*
 
 ---
@@ -133,6 +134,8 @@ The model is built with a standard, robust CNN architecture designed for stabili
 * **Input**: `Image (224x224)`
 * **Core**: A stack of `Conv2D` layers for feature extraction, stabilized with `Batch Normalization` and made robust against overfitting with `Dropout`.
 * **Output**: A `GlobalAveragePooling` layer followed by a `Dense` layer to produce the final classification.
+<img width="577" height="647" alt="image" src="https://github.com/user-attachments/assets/84b0691b-3a1e-4d01-bdb1-fefdbe181ef0" />
+
 
 ### 📊 Performance Metrics
 
@@ -153,10 +156,15 @@ A simple "real" or "fake" verdict is not enough. To build trust, our Custom CNN 
 We integrate several state-of-the-art XAI techniques:
 
 * **Saliency Maps / Integrated Gradients**: These methods produce a heatmap that highlights the most important pixels in the input image. **Bright areas** in the map are the pixels the model "looked at" the most to make its decision.
-* **SHAP (SHapley Additive exPlanations)**: SHAP goes deeper by showing which parts of the face push the prediction towards "fake" (**red pixels**) and which parts push it towards "real" (**blue pixels**). This provides a nuanced, pixel-by-pixel contribution map.
-* **LIME (Local Interpretable Model-agnostic Explanations)**: LIME identifies which "superpixels" or regions of the image were most influential. This is useful for seeing if the model is focusing on logical areas, like inconsistent eyes or a blurry jawline.
+  <img width="690" height="729" alt="image" src="https://github.com/user-attachments/assets/5c76d5fd-2355-4b69-9179-d865063b6968" />
+  <img width="1224" height="635" alt="image" src="https://github.com/user-attachments/assets/7dcddd5c-9c19-441f-b2b2-6b8b0da2b276" />
 
-![Example XAI Visualization](path/to/xai_visualization.png)
-*An example showing SHAP highlighting manipulated regions on a deepfake face.*
+
+* **SHAP (SHapley Additive exPlanations)**: SHAP goes deeper by showing which parts of the face push the prediction towards "fake" (**red pixels**) and which parts push it towards "real" (**blue pixels**). This provides a nuanced, pixel-by-pixel contribution map.
+<img width="1115" height="852" alt="image" src="https://github.com/user-attachments/assets/ebdc2a9b-5631-4013-9849-552774c37bc2" />
+
+* **LIME (Local Interpretable Model-agnostic Explanations)**: LIME identifies which "superpixels" or regions of the image were most influential. This is useful for seeing if the model is focusing on logical areas, like inconsistent eyes or a blurry jawline.
+ <img width="633" height="667" alt="image" src="https://github.com/user-attachments/assets/80d8c000-9598-4b03-b2c7-949221eee472" />
+
 
 By providing these transparent insights, our Custom CNN moves beyond being a black box and becomes a trustworthy forensic tool.
