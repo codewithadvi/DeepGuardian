@@ -1,4 +1,4 @@
-# 🩺 PhysNet3D — Contactless Heartbeat Estimation for Deepfake Detection
+# Contactless Heartbeat Estimation for Deepfake Detection
 
 **PhysNet3D** is a deep learning model that extracts **human heart rate signals directly from a face video** — completely contactless, using only a camera. This is made possible by analyzing **invisible changes in skin color** due to blood flow, a field known as **remote photoplethysmography (rPPG)**.
 
