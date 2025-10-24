@@ -19,7 +19,6 @@ This project presents a **revolutionary Deepfake Detection Pipeline** that combi
 >  The model also provides **human-interpretable reasoning** for its verdict based on measurable features like **sharpness, noise residuals**, and **ELA artifacts**.
 
 <img width="350" height="400" alt="image" src="https://github.com/user-attachments/assets/f6809556-9579-46de-a3cb-8e303753cbb0" />  
-
 <img width="350" height="30" alt="image" src="https://github.com/user-attachments/assets/ab3de7d5-2a10-4bcb-8b69-601346dd5d41" />
 
 ---
